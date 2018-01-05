@@ -19,8 +19,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('companies', 'CompaniesController');
-Route::resource('projects', 'ProjectsController');
-Route::resource('roles', 'RolesController');
-Route::resource('tasks', 'TasksController');
-Route::resource('users', 'UsersController');
+//Only can access these after logging in
+Route::middleware(['auth'])->group(function(){
+    Route::resource('companies', 'CompaniesController');
+    Route::resource('projects', 'ProjectsController');
+    Route::resource('roles', 'RolesController');
+    Route::resource('tasks', 'TasksController');
+    Route::resource('users', 'UsersController');
+    Route::resource('comments', 'CommentsController');
+
+    //self defined route, laravel does not know about it
+    Route::post('projects/adduser', 'ProjectsController@adduser')->name('projects.adduser');
+
+    Route::get('projects/create/{company_id?}', 'ProjectsController@create');
+});
+
+

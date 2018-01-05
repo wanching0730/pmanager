@@ -5,7 +5,7 @@
          <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-        <h3 class="text-muted">Project name</h3>
+        <h3 class="text-muted">Company name</h3>
         <nav>
           <ul class="nav nav-justified">
             <li class="active"><a href="#">Home</a></li>
@@ -50,10 +50,10 @@
           <div class="sidebar-module">
             <h4>Actions</h4>
             <ol class="list-unstyled">
-              <li><a href="/companies/{{$company->id}}/edit">Edit</a></li>
-              <li><a href="/projects/create">Add Project</a></li>
-              <li><a href="/companies">List of companies</a></li>
-              <li><a href="/companies/create">Add new company</a></li>          
+              <li><a href="/companies/{{$company->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a></li>
+              <li><a href="/projects/create"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Project</a></li>
+              <li><a href="/companies"><i class="fa fa-list-ol" aria-hidden="true"></i> List of companies</a></li>
+              <li><a href="/companies/create"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add new company</a></li>          
 
               <li>
                 <a
@@ -63,7 +63,7 @@
                     if(result){
                       event.preventDefault();
                       document.getElementById('delete-form').submit();
-                      }">Delete                
+                      }"><i class="fa fa-trash" aria-hidden="true"></i> Delete                
                 </a>
 
                 <!-- form will not be displayed -->

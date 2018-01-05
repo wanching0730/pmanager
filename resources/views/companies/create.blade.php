@@ -5,6 +5,7 @@
 
       <!-- Example row of columns -->
       <div class="row col-md-12 col-lg-12 col-sm-12" style="background: white; margin: 10px">
+      <h1>Create New Company</h1>
 
         <form method="post" action="{{ route('companies.store') }}">
             {{csrf_field()}}
